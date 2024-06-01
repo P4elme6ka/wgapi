@@ -1,0 +1,7 @@
+ListenAddr = "0.0.0.0:7456"
+DefaultWgDevice = "wg0"
+LogPath = "/var/log/wgapi/"
+Debug = true
+StoreFile = "/var/lib/wgapi/store.json"
+PersistentStore=true
+InactivePeersDelete=true
