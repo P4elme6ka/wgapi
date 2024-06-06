@@ -39,7 +39,7 @@ func NewApplication(config models.Config) *Application {
 		panic(err)
 	}
 
-	publicIp, err := utils.GetExternalIP()
+	publicIp, err := utils.Getip2()
 	if err != nil {
 		panic(err)
 	}

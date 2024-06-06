@@ -12,7 +12,7 @@ func CheckWgInstallation() {
 		mylog.GetLogger().Fatalf("failed to open wgctrl: %v", err)
 	}
 
-	myip, err := utils.GetExternalIP()
+	myip, err := utils.Getip2()
 	mylog.GetLogger().Infof("current external ip = %s\n", myip.String())
 
 	defer func() {
