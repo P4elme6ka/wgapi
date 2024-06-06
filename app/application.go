@@ -61,9 +61,9 @@ func NewApplication(config models.Config) *Application {
 	}
 
 	router.GET("new", handlers.AddNewPeer(config.DefaultWgDevice, publicIp, storage))
-	router.GET("get", handlers.GetPeer(storage))
+	//router.GET("get", handlers.GetPeer(storage))
 	router.GET("delete", handlers.RemovePeer(storage))
-	router.GET("list", handlers.GetPeerList(storage))
+	//router.GET("list", handlers.GetPeerList(storage))
 
 	return &Application{
 		config: config,

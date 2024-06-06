@@ -3,6 +3,7 @@ package handlers
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
+	"myvgrest/models"
 	"myvgrest/mylog"
 	"myvgrest/store"
 	wg_control "myvgrest/wg-control"
@@ -26,7 +27,10 @@ func AddNewPeer(deviceName string, publicIp net.IP, storage *store.Storage) gin.
 			return
 		}
 
-		GenerateResponse(c, http.StatusOK, peerWrap.StringConf)
+		GenerateResponse(c, http.StatusOK, models.PeerConfig{
+			Id:     peerWrap.Id,
+			Config: peerWrap.StringConf,
+		})
 	}
 }
 
@@ -81,7 +85,10 @@ func GetPeer(storage *store.Storage) gin.HandlerFunc {
 			return
 		}
 
-		GenerateResponse(c, http.StatusOK, peerWrap.StringConf)
+		GenerateResponse(c, http.StatusOK, models.PeerConfig{
+			Id:     peerWrap.Id,
+			Config: peerWrap.StringConf,
+		})
 	}
 }
 

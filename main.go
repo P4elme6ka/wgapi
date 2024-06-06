@@ -7,21 +7,9 @@ import (
 	"myvgrest/app"
 	"myvgrest/models"
 	"os"
-	"os/user"
 )
 
-func isRoot() bool {
-	currentUser, err := user.Current()
-	if err != nil {
-		panic("[isRoot] Unable to get current user " + err.Error())
-	}
-	return currentUser.Username == "root"
-}
-
 func main() {
-	if !isRoot() {
-		panic("needed to be run from root")
-	}
 	var configPathFlag string
 	flag.StringVar(&configPathFlag, "config", "/etc/mywgrest/config.toml", "path to config")
 	flag.Parse()
