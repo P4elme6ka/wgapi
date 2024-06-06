@@ -29,7 +29,7 @@ func (pw *PeerWrapper) GetStringConfig() (string, error) {
 	//}
 	//
 	//fmt.Fprintf(b, "Address = %s\n", strings.Join(addresses, ","))
-	fmt.Fprintf(b, "Address = 10.10.3.2\n")
+	fmt.Fprintf(b, "Address = 10.66.66.1\n")
 	//if pw.Device.DNSServers != nil && len(*options.DNSServers) > 0 {
 	//	fmt.Fprintf(b, "DNS = %s\n", strings.Join(*options.DNSServers, ","))
 	//}
