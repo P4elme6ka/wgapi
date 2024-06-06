@@ -21,6 +21,8 @@ type Application struct {
 }
 
 func NewApplication(config models.Config) *Application {
+	wg_control.CheckWgInstallation()
+
 	context, _ := signal.NotifyContext(context.Background(), syscall.SIGHUP, syscall.SIGINT, syscall.SIGTERM, syscall.SIGQUIT)
 	mylog.SetupLogger(config, context)
 
