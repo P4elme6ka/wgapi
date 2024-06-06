@@ -4,7 +4,6 @@ After=network.target
 StartLimitIntervalSec=0
 
 [Service]
-User=wgapi
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_RAW CAP_NET_BIND_SERVICE
 EnvironmentFile=/etc/default/wgapi
 ExecStart=/usr/bin/wgapi --config /etc/wgapi/config.toml
