@@ -43,7 +43,7 @@ func (pw *PeerWrapper) GetStringConfig() (string, error) {
 		fmt.Fprintf(b, "PresharedKey = %s\n", pw.Peer.PresharedKey.String())
 	}
 	if pw.Peer.Endpoint != nil {
-		fmt.Fprintf(b, "Endpoint = %s:%d\n", pw.Peer.Endpoint.IP.String(), pw.Peer.Endpoint.Port)
+		fmt.Fprintf(b, "Endpoint = %s:%d\n", pw.Peer.Endpoint.IP.To4().String(), pw.Peer.Endpoint.Port)
 	}
 	allowedIps := []string{}
 	for _, ip := range pw.PeerConfig.AllowedIPs {

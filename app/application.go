@@ -23,8 +23,8 @@ type Application struct {
 func NewApplication(config models.Config) *Application {
 	context, _ := signal.NotifyContext(context.Background(), syscall.SIGHUP, syscall.SIGINT, syscall.SIGTERM, syscall.SIGQUIT)
 	mylog.SetupLogger(config, context)
-
-	wg_control.CheckWgInstallation()
+	//
+	//wg_control.CheckWgInstallation()
 
 	router := gin.New()
 	router.Use(mylog.Logger(mylog.GetLogger()), gin.Recovery())
