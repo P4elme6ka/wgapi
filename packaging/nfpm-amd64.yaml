@@ -8,8 +8,8 @@ depends:
 contents:
   - src: build/build_wgapi
     dst: /usr/bin/wgapi
-  - src: packaging/wgapi.service
-    dst: /etc/systemd/system/wgapi.service
+  - src: packaging/myvpn.service
+    dst: /etc/systemd/system/myvpn.service
     type: config
   - src: packaging/default
     dst: /etc/default/wgapi
